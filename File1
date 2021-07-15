@@ -1,0 +1,7 @@
+#How To Load URL In Selenium WebDriver – Get() & Navigate()
+If you try to open a URL without HTTP or HTTPS i.e. driver.get(“www.facebook.com”);) then get() method will throw an exception as “org.openqa.selenium.InvalidArgumentException: invalid argument“. This is common mistake done by beginners.
+You can load a URL without mentioning WWW i.e. http://facebook.com. It will not give any exception. This was asked to me in interview.
+There may be a Page Load Timeout which depends upon browser. For chrome, page load time out is shown as 300000 seconds.
+void to(String url); 
+void to(URL url);  
+driver.navigate().to();
