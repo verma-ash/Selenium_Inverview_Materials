@@ -4,4 +4,21 @@ You can load a URL without mentioning WWW i.e. http://facebook.com. It will not 
 There may be a Page Load Timeout which depends upon browser. For chrome, page load time out is shown as 300000 seconds.
 void to(String url); 
 void to(URL url);  
-driver.navigate().to();
+driver.navigate().to(<<url>>);
+
+
+#How To Load A URL In Browser Without Using Get() Or Navigate() Method In Selenium
+javaScript command
+JavascriptExecutor js= (JavascriptExecutor) driver;
+String url = "https://www.google.com";
+String script = "window.location = \'"+url+"\'";
+js.executeScript(script);
+OR
+JavascriptExecutor js= (JavascriptExecutor) driver;
+//String url = "http://flipkart.com";
+String script1 = "window.location = \'http://flipkart.com'";
+js.executeScript(script1);
+//WebElement firstName= driver.findElement(By.xpath("//input[@title='Search for Products, Brands and More']"));
+System.out.println(driver.getCurrentUrl());
+String script2 = "window.location = \'http://facebook.com'";
+js.executeScript(script2);
